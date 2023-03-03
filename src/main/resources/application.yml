@@ -1,0 +1,27 @@
+server:
+  port: 8087
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/pokemon
+    username: COURSDB
+    password: coursdb
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+keycloak:
+  realm: wallet-realm
+  resource: wallet-client
+  bearer-only: true
+  auth-server-url: http://localhost:8080
+  ssl-required: none
+  public-client: false
+  cors: true
